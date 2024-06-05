@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // Define the image tag
-                    def imageTag = "${env.IMAGE_REGISTRY}/${env.APP_NAME}:${env.BUILD_NUMBER}"
+                    def imageTag = "alyaabadr/${env.APP_NAME}:${env.BUILD_NUMBER}"
                     
                     // Build the Docker image
                     sh "docker build -t ${imageTag} ."
