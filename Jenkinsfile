@@ -19,7 +19,7 @@ pipeline {
                     
                     // Build the Docker image
                     sh "docker build -t ${imageTag} ."
-  withCredentials([usernamePassword(credentialsId: "${dockerhub-credentials}", usernameVariable: 'USERNAME',             passwordVariable: 'PASSWORD')]) 
+  withCredentials([usernamePassword(credentialsId: "${dockerHubCredentialsID}", usernameVariable: 'USERNAME',             passwordVariable: 'PASSWORD')]) 
  {
 		sh "docker login -u ${USERNAME} -p ${PASSWORD}"
 }
